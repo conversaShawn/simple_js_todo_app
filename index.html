@@ -7,12 +7,13 @@
 </head>
 <body>
     <h1>Todo App</h1>
-    <input type="text" />
-    <button>Add</button>
-    <ul>
-        <li>Learn js</li>
-        <li>Learn js</li>
-        <li>Learn js</li>
+    <input id="newToDo" type="text" />
+    <button placeholder="Add New Todo" onclick="addNewToDo()">Add</button>
+    <ul id="toDoList">
+        <li class="individualToDo">Learn js</li>
+        <li class="individualToDo">Learn js</li>
+        <li class="individualToDo">Learn js</li>
     </ul>
+    <script src="./app.js"></script>
 </body>
 </html>
