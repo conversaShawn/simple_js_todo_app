@@ -14,6 +14,12 @@ element.appendChild(textNode)
 // append text node to todo list
 document.getElementById('toDoList').appendChild(element).classList.add('individualToDo')
 console.log(element)
+clearInput()
+}
+
+// clear input
+const clearInput = () => {
+    document.getElementById('newToDo').value = ""
 }
 
 // mark todo as complete
