@@ -1,0 +1,9 @@
+.individualToDo {
+    list-style-type: none;
+    /* background-color: green; */
+}
+
+.strikeout {
+    /* background-color: purple; */
+    text-decoration: line-through;
+}
