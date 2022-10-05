@@ -1,32 +1,30 @@
 console.log("js file works");
 
-// mark todo as complete
-// const markComplete = (singleStrikeOut) => {
-//     let strikeout = document.querySelectorAll('.individualToDo')
-    
-//     strikeout.forEach(singelStrikeOut => {
-//         singelStrikeOut.addEventListener('click', function() {
-//         // classList.add('strikeout')
-//         console.log('still working hopefully')
-//         })
-//     }) 
-// }
+// const toggleComplete = () => {
+//   // get all todos
+//   let allToDos = document.querySelectorAll(".individualToDo");
+//   // loop through todos and addEventListener
+//   console.log(allToDos);
+//   allToDos.forEach((singleToDo) => {
+//     singleToDo.addEventListener("click", function () {
+//       singleToDo.classList.toggle("strikeout");
+//     });
+//   });
+// };
+// toggleComplete();
 
-// add event listener to all hardcoded todos
-const incompleteTodo = () => {
-    // get all todos
-    let allToDos = document.querySelectorAll(".individualToDo")
-    // loop through todos and addEventListener
-    allToDos.forEach(singleToDo => {
-        singleToDo.addEventListener('click', 
-        function() {
-            singleToDo.classList.add('strikeout')
-            console.log('I clicked')
-        })
-        // markComplete)
-    })
-}
-incompleteTodo()
+// mark complete
+const toggleComplete = () => {
+  // console.log("it toggles");
+  // get parent node
+  let completed = document.querySelector("ul");
+  // add event listener
+  completed.addEventListener("click", (todo) => {
+    // target event listener and toggle class
+    todo.target.classList.toggle("strikeout");
+  });
+};
+toggleComplete();
 
 // add todo
 const addNewToDo = () => {
@@ -40,20 +38,15 @@ const addNewToDo = () => {
   // append text to element
   element.appendChild(textNode);
   // append text node to todo list
-  element.addEventListener('click', 
-  function() {
-    element.classList.add('strikeout')
-    console.log('New todo clicked')
-  });
-// markComplete)
-
-
-
   document
     .getElementById("toDoList")
     .appendChild(element)
-    .classList.add("individualToDo")
+    .classList.add("individualToDo");
   console.log(element);
+// all event listener to all new todos
+// element.addEventListener('click', () => {
+//   element.classList.toggle('strikeout')
+// })
 
   clearInput();
 };
@@ -66,5 +59,5 @@ const clearInput = () => {
 
 // add eventlistener to all incomplete todos
 
-
 // delete todo
+let points = (a, b, c = a * 2 + b * 3) => c;
