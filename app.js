@@ -60,4 +60,3 @@ const clearInput = () => {
 // add eventlistener to all incomplete todos
 
 // delete todo
-let points = (a, b, c = a * 2 + b * 3) => c;
