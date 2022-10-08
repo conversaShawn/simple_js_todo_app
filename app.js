@@ -8,31 +8,40 @@ const toggleComplete = () => {
   // add event listener
   completed.addEventListener("click", (todo) => {
     // target event listener and toggle class
-    todo.target.classList.toggle("strikeout");
+
+    // "working... kinda"
+    if (todo.target.tagName === "LI") {
+      todo.target.classList.toggle("strikeout");
+      console.log("dammit");
+    }
   });
 };
 toggleComplete();
 
-delete complete;
+// add trash can icon;
 const addTrashCan = () => {
   // console.log("it deletes");
   // get parent node
-  let deleteToDo = document.querySelectorAll("li");
+  let addTrashCanIcon = document.querySelectorAll("li");
 
   // add event listener
-
-  deleteToDo.forEach((st) => {
+  addTrashCanIcon.forEach((singleTrashCan) => {
     let trashcan = document.createElement("div");
     trashcan.classList.add("testing");
-    st.appendChild(trashcan);
-    
+    singleTrashCan.appendChild(trashcan);
+    trashcan.addEventListener("click", () => {
+      console.log("trash");
+      trashcan.parentElement.style.display = "none";
+    });
   });
 };
+
 addTrashCan();
 
 // add todo
 const addNewToDo = () => {
   // console.log("add todo on click");
+
   // store input text as variable
   let newToDoText = document.getElementById("newToDo").value;
   // create element
@@ -44,13 +53,19 @@ const addNewToDo = () => {
   // trashcan.classList.add('testing')
   element.appendChild(textNode);
   element.appendChild(trashcan).classList.add("testing");
-  // append text node to todo list
+  trashcan.addEventListener("click", () => {
+    console.log("trash");
+    trashcan.parentElement.style.display = "none";
+  });
 
+  // append text node to todo list
   document
     .getElementById("toDoList")
     .appendChild(element)
     .classList.add("individualToDo");
   console.log(element);
+
+  // add event listener to trash can
 
   clearInput();
 };
