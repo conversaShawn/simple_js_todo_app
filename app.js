@@ -1,26 +1,25 @@
-console.log("js file works");
+// console.log("js file works");
 
-// mark complete
+// TOGGLE COMPLETE/INCOMPLETE
 const toggleComplete = () => {
   // console.log("it toggles");
+
   // get parent node
   let completed = document.querySelector("ul");
   // add event listener
   completed.addEventListener("click", (todo) => {
-    // target event listener and toggle class
-
-    // "working... kinda"
-    if (todo.target.tagName === "LI") {
-      todo.target.classList.toggle("strikeout");
-      console.log("dammit");
-    }
+    // toggle class
+    todo.target.tagName === "LI"
+      ? todo.target.classList.toggle("markComplete")
+      : false;
   });
 };
 toggleComplete();
 
-// add trash can icon;
+// ADD DELETE BUTTON;
 const addTrashCan = () => {
   // console.log("it deletes");
+
   // get parent node
   let addTrashCanIcon = document.querySelectorAll("li");
 
@@ -30,18 +29,18 @@ const addTrashCan = () => {
     trashcan.classList.add("testing");
     singleTrashCan.appendChild(trashcan);
     trashcan.addEventListener("click", () => {
-      console.log("trash");
+      // console.log("trash");
       trashcan.parentElement.style.display = "none";
     });
   });
 };
-
 addTrashCan();
 
-// add todo
+// ADD NEW TODO
 const addNewToDo = () => {
   // console.log("add todo on click");
 
+  // CREATE NEW TODO DIV
   // store input text as variable
   let newToDoText = document.getElementById("newToDo").value;
   // create element
@@ -49,29 +48,34 @@ const addNewToDo = () => {
   // create text node
   let textNode = document.createTextNode(newToDoText);
   // append text to element
-  let trashcan = document.createElement("div");
-  // trashcan.classList.add('testing')
   element.appendChild(textNode);
+
+  // ADD DELETE BUTTON TO NEW TODO
+  // create element
+  let trashcan = document.createElement("div");
+  // append delete button to element
   element.appendChild(trashcan).classList.add("testing");
+  // add event listener to delete button
   trashcan.addEventListener("click", () => {
-    console.log("trash");
+    // console.log("new todo trash");
     trashcan.parentElement.style.display = "none";
   });
 
-  // append text node to todo list
-  document
-    .getElementById("toDoList")
-    .appendChild(element)
-    .classList.add("individualToDo");
-  console.log(element);
-
-  // add event listener to trash can
+  // APPEND TEXT NODE TO TODO LIST OR THROW ERROR IF TEXT INPUT EMPTY
+  newToDoText === ""
+    ? alert("YOU MUST ENTER NEW TODO")
+    : document
+        .getElementById("toDoList")
+        .appendChild(element)
+        .classList.add("individualToDo");
+  // console.log(element);
 
   clearInput();
 };
 
-// clear input
+// RESET INPUT
 const clearInput = () => {
-  console.log("clear input");
+  // console.log("clear input");
+  // SET INPUT TO EMPTY STRING
   document.getElementById("newToDo").value = "";
 };

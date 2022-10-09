@@ -43,15 +43,10 @@ li {
   align-items: center;
 }
 
-.strikeout {
+.markComplete {
   background-color: rgb(174, 112, 112);
   text-decoration: line-through;
 }
-
-/* .complete {
-  background-color: purple;
-  text-decoration: none;
-} */
 
 .testing {
   height: 30px;
