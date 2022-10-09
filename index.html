@@ -1,26 +1,36 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="appContainer">
-
-        <h1>Todo App</h1>
-        <div class="addToDoContainer">
-
-            <input id="newToDo" type="text" />
-            <button placeholder="Add New Todo" onclick="addNewToDo()">Add</button>
-        </div>
-        <ul id="toDoList">
-            <li class="individualToDo">Learn js</li>
-            <li class="individualToDo">Learn cypress</li>
-            <li class="individualToDo">Just keep learning</li>
-        </ul>
-        <script src="./app.js"></script>
+      <h1>cy.ToDo App</h1>
+      <div class="addToDoContainer">
+        <input id="newToDo" type="text" placeholder="Add an item" />
+        <button
+          id="addToDoButton"
+          placeholder="Add New ToDo"
+          onclick="addNewToDo()"
+        >
+          Add Item
+        </button>
+      </div>
+      <ul id="toDoList">
+        <li class="individualToDo">Learn js</li>
+        <li class="individualToDo">Learn cypress</li>
+        <li class="individualToDo">Just keep learning</li>
+      </ul>
+      <script src="./app.js"></script>
     </div>
-</body>
+  </body>
 </html>
