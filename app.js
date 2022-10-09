@@ -26,7 +26,7 @@ const addTrashCan = () => {
   // add event listener
   addTrashCanIcon.forEach((singleTrashCan) => {
     let trashcan = document.createElement("div");
-    trashcan.classList.add("testing");
+    trashcan.classList.add("deleteToDo");
     singleTrashCan.appendChild(trashcan);
     trashcan.addEventListener("click", () => {
       // console.log("trash");
@@ -54,7 +54,7 @@ const addNewToDo = () => {
   // create element
   let trashcan = document.createElement("div");
   // append delete button to element
-  element.appendChild(trashcan).classList.add("testing");
+  element.appendChild(trashcan).classList.add("deleteToDo");
   // add event listener to delete button
   trashcan.addEventListener("click", () => {
     // console.log("new todo trash");
