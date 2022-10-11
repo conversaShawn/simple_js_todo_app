@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/background.svg" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,13 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>cy.basicToDo</title>
   </head>
   <body>
     <div class="appContainer">
-      <h1>cy.ToDo App</h1>
+      <h1>To-Do App</h1>
       <div class="addToDoContainer">
-        <input id="newToDo" type="text" placeholder="Add an item" />
+        <input id="newToDo" type="text" maxlength="60" placeholder="Add an item" />
         <button
           id="addToDoButton"
           placeholder="Add New ToDo"
@@ -26,9 +27,15 @@
         </button>
       </div>
       <ul id="toDoList">
-        <li class="individualToDo">Learn js</li>
-        <li class="individualToDo">Learn cypress</li>
-        <li class="individualToDo">Just keep learning</li>
+        <li class="individualToDo">
+          <!-- <div class="testing">Learn js</div> -->
+        </li>
+        <li class="individualToDo">
+          <!-- <div class="testing">Learn cypress</div> -->
+        </li>
+        <li class="individualToDo">
+          <!-- <div class="testing">Just keep learning</div> -->
+        </li>
       </ul>
       <script src="./app.js"></script>
     </div>

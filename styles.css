@@ -1,7 +1,7 @@
 body::after {
   background-size: 100px !important;
   background-repeat: repeat;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   content: "";
   background: url(/images/background.svg);
   opacity: 0.5;
@@ -10,22 +10,26 @@ body::after {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;   
+  z-index: -1;
 }
 
 .appContainer {
-  max-width: 900px;
-  height: 100vh;
-  margin: 75px auto;
+  width: 50vw;
+  height: 70vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
   background: rgb(255, 255, 255);
   padding: 100px 100px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 #00595d, 0 6px 20px 0 #00595d
+  box-shadow: 0 4px 8px 0 #00595d, 0 6px 20px 0 #00595d;
 }
 
 h1 {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #addToDoButton {
@@ -60,7 +64,7 @@ input {
 li {
   height: 25px;
   margin: 5px;
-  padding: 5px;
+  padding: 0px 20px;
   border-radius: 5px;
 }
 
@@ -72,6 +76,22 @@ li {
   align-items: center;
 }
 
+.editToDo {
+  background-image: url(/images/edit.png);
+  background-size: 30px;
+  height: 30px;
+  width: 30px;
+  margin-left: auto;
+}
+
+.saveToDo {
+  background-image: url(/images/save.png);
+  background-size: 30px;
+  height: 30px;
+  width: 30px;
+  margin-left: auto;
+}
+
 .markComplete {
   color: rgb(187, 187, 187);
   text-decoration: line-through;
@@ -80,9 +100,9 @@ li {
 .deleteToDo {
   height: 30px;
   width: 30px;
-  background-image: url(/images/image.png);
+  background-image: url(/images/trash.png);
   background-size: 30px;
-  margin-left: auto;
+  margin-left: 5px;
 }
 
 .checkToDo {
@@ -90,11 +110,18 @@ li {
   width: 30px;
   background-image: url(/images/not_checked.png);
   background-size: 30px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .markCompleteCheckBox {
   background-image: url(/images/checked.png);
   height: 30px;
   width: 30px;
+}
+
+.testing:focus {
+  width: 86%;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
