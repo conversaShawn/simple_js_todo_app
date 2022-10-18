@@ -11,48 +11,46 @@ body {
 }
 
 h1 {
-text-align: center;
+  text-align: center;
 }
 
 .addToDoContainer {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }
 
 input {
-    width: 500px;
+  width: 500px;
 }
 
 li {
-    border: solid 1px;
-    height: 25px;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-
+  border: solid 1px;
+  height: 25px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .individualToDo {
   list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.strikeout {
+.markComplete {
   background-color: rgb(174, 112, 112);
   text-decoration: line-through;
 }
 
-.complete {
-  /* background-color: purple; */
-  text-decoration: none;
-}
-
-.testing {
-  height: 45px;
-  width: 45px;
-  background-color: aqua;
+.deleteToDo {
+  height: 30px;
+  width: 30px;
+  background-image: url(/images/image.png);
+  background-size: 30px;
 }
