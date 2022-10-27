@@ -9,8 +9,8 @@ const addPencil = () => {
   addEditIcons.forEach((individualToDo) => {
     let toDoInput = document.createElement("div");
     toDoInput.classList.add("testing");
-    toDoInput.innerText = "Learn js"
-    individualToDo.appendChild(toDoInput)
+    toDoInput.innerText = "Learn js";
+    individualToDo.appendChild(toDoInput);
 
     let pencil = document.createElement("div");
     pencil.classList.add("editToDo");
@@ -60,29 +60,28 @@ addTrashCan();
 const addCheckBox = () => {
   // console.log("it toggles");
 
-// 
-
+  //
 
   // get parent node
   let addCheckBoxIcon = document.querySelectorAll("li");
 
   // TOGGLE COMPLETE/INCOMPLETE
   addCheckBoxIcon.forEach((singleCheckBox) => {
-// create checkBox before div
-let controlCB = document.createElement('input')
-controlCB.type = "checkbox"
-controlCB.classList.add('reallyChecked')
+    // create checkBox before div
+    let controlCB = document.createElement("input");
+    controlCB.type = "checkbox";
+    controlCB.classList.add("reallyChecked");
 
     let checkbox = document.createElement("div");
     checkbox.classList.add("checkToDo");
     singleCheckBox.prepend(checkbox);
-    singleCheckBox.prepend(controlCB)
-    // checkbox.addEventListener("click", () => {
-    //   // toggle class
-    //   checkbox.parentElement.classList.toggle("markComplete");
-    //   checkbox.classList.toggle("markCompleteCheckBox");
-    //   // console.log("clicks");
-    // });
+    singleCheckBox.prepend(controlCB);
+    controlCB.addEventListener("click", () => {
+      // toggle class
+      checkbox.parentElement.classList.toggle("markComplete");
+      checkbox.classList.toggle("markCompleteCheckBox");
+      // console.log("clicks");
+    });
   });
 };
 addCheckBox();
@@ -149,13 +148,19 @@ const addNewToDo = () => {
   });
 
   // ADD COMPLETE/INCOMPLETE TO NEW TODO
+// create checkBox before div
+let controlCB = document.createElement("input");
+controlCB.type = "checkbox";
+controlCB.classList.add("reallyChecked");
+
   // create element
   let checkbox = document.createElement("div");
   checkbox.classList.add("checkToDo");
   // prepend complete/incomplete button to element
   element.prepend(checkbox);
+  element.prepend(controlCB);
   // add event listener to complete/incomplete button
-  checkbox.addEventListener("click", (todo) => {
+  controlCB.addEventListener("click", (todo) => {
     // toggle class
     checkbox.parentElement.classList.toggle("markComplete");
     checkbox.classList.toggle("markCompleteCheckBox");
