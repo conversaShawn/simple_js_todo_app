@@ -1,5 +1,29 @@
 // console.log("js file works");
 
+// GENERATE STATIC TODO LIST
+// let todos = [
+//   {
+//     text: "Learn js",
+//     isComplete: false,
+//   },
+//   {
+//     text: "Learn cypress",
+//     isComplete: true,
+//   },
+//   {
+//     text: "Learn more cool things",
+//     isComplete: false,
+//   },
+// ];
+
+// let itemTemplate = document.getElementById('toDoItem')
+// let toDoList = document.getElementById('toDoList')
+// todos.forEach(todo => {
+// toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
+// })
+
+// PUSH NEW TODO INTO todos OBJECT
+
 // ADD EDIT BUTTON
 const addPencil = () => {
   // console.log('content editable')
@@ -50,7 +74,8 @@ const addTrashCan = () => {
     singleTrashCan.appendChild(trashcan);
     trashcan.addEventListener("click", () => {
       // console.log("trash");
-      trashcan.parentElement.style.display = "none";
+      // trashcan.parentElement.style.display = "none";
+      trashcan.parentElement.remove();
     });
   });
 };
@@ -163,7 +188,7 @@ const addNewToDo = () => {
   controlCB.addEventListener("click", (todo) => {
     // toggle class
     checkbox.parentElement.classList.toggle("markComplete");
-    checkbox.classList.toggle("markCompleteCheckBox");
+    // checkbox.classList.toggle("markCompleteCheckBox");
     // console.log('toggles complete')
   });
 
@@ -184,4 +209,46 @@ const clearInput = () => {
   // console.log("clear input");
   // SET INPUT TO EMPTY STRING
   document.getElementById("newToDo").value = "";
+};
+
+// COMPLETE ALL
+const completeAll = (event) => {
+  console.log("complete");
+  // CHECKED OR NOT CHECKED?
+  console.log(event.target.checked);
+
+  // let completeAllButton = document.getElementById("completeAllButton");
+
+  let allStrikeThrough = document.querySelectorAll("li");
+  allStrikeThrough.forEach((singleRC) => {
+    if (!singleRC.classList.contains("markComplete")) {
+      singleRC.classList.add("markComplete");
+    } else if (!event.target.checked) {
+      singleRC.classList.remove("markComplete");
+      // singleRC.checked = false
+    };
+
+  });
+  // console.log(allStrikeThrough);
+
+  // TARGET .REALLYCHECKED AND ALLOW CSS TO UPDATE STYLES
+
+  let allReallyChecked = document.querySelectorAll(".reallyChecked");
+  // allReallyChecked.forEach(singleRC => singleRC.classList.toggle('markCompleteCheckBox'))
+  allReallyChecked.forEach((singleRC) => {
+    console.log(singleRC.checked);
+    if (!singleRC.checked) {
+      singleRC.checked = true
+    }
+    else if (!event.target.checked) {
+      singleRC.checked = false
+    };
+  });
+
+  // console.log(allReallyChecked);
+};
+
+// DELETE ALL
+const deleteAll = () => {
+  console.log("delete");
 };

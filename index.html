@@ -34,14 +34,28 @@
       <div class="allContainer">
         <div class="completeAllContainer">
           <h3>COMPLETE ALL</h3>
-          <input class="reallyCompleted ac" type="checkbox" />
+          <input
+            id="completeAllButton"
+            onclick="completeAll(event)"
+            class="reallyCompleted ac"
+            type="checkbox"
+          />
           <div class="checkAllToDos ac"></div>
         </div>
         <div class="deleteAllContainer">
           <h3>DELETE ALL</h3>
-          <div class="deleteAllToDos"></div>
+          <div
+            id="deleteAllButton"
+            onclick="deleteAll()"
+            class="deleteAllToDos"
+          ></div>
         </div>
       </div>
+      <!-- <template id="toDoItem">
+        ITEM_TEXT
+      </li>
+      
+    </template> -->
       <ul id="toDoList">
         <li class="individualToDo"></li>
         <li class="individualToDo"></li>
