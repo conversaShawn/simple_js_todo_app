@@ -148,10 +148,10 @@ const addNewToDo = () => {
   });
 
   // ADD COMPLETE/INCOMPLETE TO NEW TODO
-// create checkBox before div
-let controlCB = document.createElement("input");
-controlCB.type = "checkbox";
-controlCB.classList.add("reallyChecked");
+  // create checkBox before div
+  let controlCB = document.createElement("input");
+  controlCB.type = "checkbox";
+  controlCB.classList.add("reallyChecked");
 
   // create element
   let checkbox = document.createElement("div");

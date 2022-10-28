@@ -17,7 +17,12 @@
     <div class="appContainer">
       <h1>To-Do App</h1>
       <div class="addToDoContainer">
-        <input id="newToDo" type="text" maxlength="60" placeholder="Add an item" />
+        <input
+          id="newToDo"
+          type="text"
+          maxlength="60"
+          placeholder="Add an item"
+        />
         <button
           id="addToDoButton"
           placeholder="Add New ToDo"
@@ -26,16 +31,21 @@
           Add Item
         </button>
       </div>
+      <div class="allContainer">
+        <div class="completeAllContainer">
+          <h3>COMPLETE ALL</h3>
+          <input class="reallyCompleted ac" type="checkbox" />
+          <div class="checkAllToDos ac"></div>
+        </div>
+        <div class="deleteAllContainer">
+          <h3>DELETE ALL</h3>
+          <div class="deleteAllToDos"></div>
+        </div>
+      </div>
       <ul id="toDoList">
-        <li class="individualToDo">
-          <!-- <div class="testing">Learn js</div> -->
-        </li>
-        <li class="individualToDo">
-          <!-- <div class="testing">Learn cypress</div> -->
-        </li>
-        <li class="individualToDo">
-          <!-- <div class="testing">Just keep learning</div> -->
-        </li>
+        <li class="individualToDo"></li>
+        <li class="individualToDo"></li>
+        <li class="individualToDo"></li>
       </ul>
       <script src="./app.js"></script>
     </div>
