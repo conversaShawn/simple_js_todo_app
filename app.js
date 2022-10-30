@@ -35,6 +35,7 @@ const addPencil = () => {
     toDoInput.classList.add("testing");
     toDoInput.innerText = "Learn js";
     individualToDo.appendChild(toDoInput);
+    // let toDoInput = document.querySelectorAll('.testing')
 
     let pencil = document.createElement("div");
     pencil.classList.add("editToDo");
@@ -73,9 +74,9 @@ const addTrashCan = () => {
     trashcan.classList.add("deleteToDo");
     singleTrashCan.appendChild(trashcan);
     trashcan.addEventListener("click", () => {
-      // console.log("trash");
       // trashcan.parentElement.style.display = "none";
       trashcan.parentElement.remove();
+      // trashcan.parentNode.remove()
     });
   });
 };
@@ -144,7 +145,7 @@ const addNewToDo = () => {
   // append save button to element
   element.appendChild(saveButton);
 
-  // add event listener to delete button
+  // add event listener to edit button
   pencil.addEventListener("click", () => {
     toDoInput.contentEditable = true;
     toDoInput.focus();
@@ -153,7 +154,7 @@ const addNewToDo = () => {
     // console.log("pencil click");
   });
 
-  // add event listener to delete button
+  // add event listener to save button
   saveButton.addEventListener("click", () => {
     toDoInput.contentEditable = false;
     saveButton.style.display = "none";
@@ -169,7 +170,7 @@ const addNewToDo = () => {
   // add event listener to delete button
   trashcan.addEventListener("click", () => {
     // console.log("new todo trash");
-    trashcan.parentElement.style.display = "none";
+    trashcan.parentElement.remove();
   });
 
   // ADD COMPLETE/INCOMPLETE TO NEW TODO
@@ -226,8 +227,7 @@ const completeAll = (event) => {
     } else if (!event.target.checked) {
       singleRC.classList.remove("markComplete");
       // singleRC.checked = false
-    };
-
+    }
   });
   // console.log(allStrikeThrough);
 
@@ -238,11 +238,10 @@ const completeAll = (event) => {
   allReallyChecked.forEach((singleRC) => {
     console.log(singleRC.checked);
     if (!singleRC.checked) {
-      singleRC.checked = true
+      singleRC.checked = true;
+    } else if (!event.target.checked) {
+      singleRC.checked = false;
     }
-    else if (!event.target.checked) {
-      singleRC.checked = false
-    };
   });
 
   // console.log(allReallyChecked);
@@ -250,5 +249,18 @@ const completeAll = (event) => {
 
 // DELETE ALL
 const deleteAll = () => {
-  console.log("delete");
+  // let deleteAllButton = document.getElementById("deleteAllButton");
+  let allTodos = document.getElementsByTagName("li");
+  // console.log('how many left: ', allTodos.length);
+  // for (let i = 0; i < allTodos.length; i++) {
+  //   allTodos[i].remove()
+  //   console.log(i)
+  //   // debugger
+  // }
+  let i = allTodos.length;
+
+  while (i--) {
+    allTodos[i].remove();
+  }
+  console.log('how many left: ', allTodos.length)
 };
