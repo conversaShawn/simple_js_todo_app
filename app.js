@@ -79,6 +79,7 @@ const addTrashCan = () => {
       // trashcan.parentNode.remove()
     });
   });
+  console.log('how many left: ', singleTrashCan)
 };
 addTrashCan();
 
