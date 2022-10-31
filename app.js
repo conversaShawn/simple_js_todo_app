@@ -1,26 +1,28 @@
 // console.log("js file works");
 
-// GENERATE STATIC TODO LIST
-// let todos = [
-//   {
-//     text: "Learn js",
-//     isComplete: false,
-//   },
-//   {
-//     text: "Learn cypress",
-//     isComplete: true,
-//   },
-//   {
-//     text: "Learn more cool things",
-//     isComplete: false,
-//   },
-// ];
+import {addTrashCan} from './js/delete.js'
 
-// let itemTemplate = document.getElementById('toDoItem')
-// let toDoList = document.getElementById('toDoList')
-// todos.forEach(todo => {
-// toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
-// })
+// GENERATE STATIC TODO LIST
+let todos = [
+  {
+    text: "Learn js",
+    isComplete: false,
+  },
+  {
+    text: "Learn cypress",
+    isComplete: true,
+  },
+  {
+    text: "Learn more cool things",
+    isComplete: false,
+  },
+];
+
+let itemTemplate = document.getElementById('toDoItem')
+let toDoList = document.getElementById('toDoList')
+todos.forEach(todo => {
+toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
+})
 
 // PUSH NEW TODO INTO todos OBJECT
 
@@ -32,10 +34,9 @@ const addPencil = () => {
 
   addEditIcons.forEach((individualToDo) => {
     let toDoInput = document.createElement("div");
-    toDoInput.classList.add("testing");
-    toDoInput.innerText = "Learn js";
-    individualToDo.appendChild(toDoInput);
-    // let toDoInput = document.querySelectorAll('.testing')
+    // toDoInput.classList.add("testing");
+    // toDoInput.innerText = "Learn js";
+    // individualToDo.appendChild(toDoInput);
 
     let pencil = document.createElement("div");
     pencil.classList.add("editToDo");
@@ -62,25 +63,25 @@ const addPencil = () => {
 addPencil();
 
 // ADD DELETE BUTTON;
-const addTrashCan = () => {
-  // console.log("it deletes");
+// const addTrashCan = () => {
+//   // console.log("it deletes");
 
-  // get parent node
-  let addTrashCanIcon = document.querySelectorAll("li");
+//   // get parent node
+//   let addTrashCanIcon = document.querySelectorAll("li");
 
-  // DELETE
-  addTrashCanIcon.forEach((singleTrashCan) => {
-    let trashcan = document.createElement("div");
-    trashcan.classList.add("deleteToDo");
-    singleTrashCan.appendChild(trashcan);
-    trashcan.addEventListener("click", () => {
-      // trashcan.parentElement.style.display = "none";
-      trashcan.parentElement.remove();
-      // trashcan.parentNode.remove()
-    });
-  });
-  console.log('how many left: ', singleTrashCan)
-};
+//   // DELETE
+//   addTrashCanIcon.forEach((singleTrashCan) => {
+//     let trashcan = document.createElement("div");
+//     trashcan.classList.add("deleteToDo");
+//     singleTrashCan.appendChild(trashcan);
+//     trashcan.addEventListener("click", () => {
+//       // trashcan.parentElement.style.display = "none";
+//       trashcan.parentElement.remove();
+//       // trashcan.parentNode.remove()
+//       console.log('how many left: ', addTrashCanIcon)
+//     });
+//   });
+// };
 addTrashCan();
 
 // ADD COMPLETE/INCOMPLETE BUTTON;
