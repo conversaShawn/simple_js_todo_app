@@ -1,5 +1,29 @@
 // console.log("js file works");
 
+// GENERATE STATIC TODO LIST
+// let todos = [
+//   {
+//     text: "Learn js",
+//     isComplete: false,
+//   },
+//   {
+//     text: "Learn cypress",
+//     isComplete: true,
+//   },
+//   {
+//     text: "Learn more cool things",
+//     isComplete: false,
+//   },
+// ];
+
+// let itemTemplate = document.getElementById('toDoItem')
+// let toDoList = document.getElementById('toDoList')
+// todos.forEach(todo => {
+// toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
+// })
+
+// PUSH NEW TODO INTO todos OBJECT
+
 // ADD EDIT BUTTON
 const addPencil = () => {
   // console.log('content editable')
@@ -9,8 +33,9 @@ const addPencil = () => {
   addEditIcons.forEach((individualToDo) => {
     let toDoInput = document.createElement("div");
     toDoInput.classList.add("testing");
-    toDoInput.innerText = "Learn js"
-    individualToDo.appendChild(toDoInput)
+    toDoInput.innerText = "Learn js";
+    individualToDo.appendChild(toDoInput);
+    // let toDoInput = document.querySelectorAll('.testing')
 
     let pencil = document.createElement("div");
     pencil.classList.add("editToDo");
@@ -49,8 +74,9 @@ const addTrashCan = () => {
     trashcan.classList.add("deleteToDo");
     singleTrashCan.appendChild(trashcan);
     trashcan.addEventListener("click", () => {
-      // console.log("trash");
-      trashcan.parentElement.style.display = "none";
+      // trashcan.parentElement.style.display = "none";
+      trashcan.parentElement.remove();
+      // trashcan.parentNode.remove()
     });
   });
 };
@@ -60,15 +86,23 @@ addTrashCan();
 const addCheckBox = () => {
   // console.log("it toggles");
 
+  //
+
   // get parent node
   let addCheckBoxIcon = document.querySelectorAll("li");
 
   // TOGGLE COMPLETE/INCOMPLETE
   addCheckBoxIcon.forEach((singleCheckBox) => {
+    // create checkBox before div
+    let controlCB = document.createElement("input");
+    controlCB.type = "checkbox";
+    controlCB.classList.add("reallyChecked");
+
     let checkbox = document.createElement("div");
     checkbox.classList.add("checkToDo");
     singleCheckBox.prepend(checkbox);
-    checkbox.addEventListener("click", () => {
+    singleCheckBox.prepend(controlCB);
+    controlCB.addEventListener("click", () => {
       // toggle class
       checkbox.parentElement.classList.toggle("markComplete");
       checkbox.classList.toggle("markCompleteCheckBox");
@@ -111,7 +145,7 @@ const addNewToDo = () => {
   // append save button to element
   element.appendChild(saveButton);
 
-  // add event listener to delete button
+  // add event listener to edit button
   pencil.addEventListener("click", () => {
     toDoInput.contentEditable = true;
     toDoInput.focus();
@@ -120,7 +154,7 @@ const addNewToDo = () => {
     // console.log("pencil click");
   });
 
-  // add event listener to delete button
+  // add event listener to save button
   saveButton.addEventListener("click", () => {
     toDoInput.contentEditable = false;
     saveButton.style.display = "none";
@@ -136,20 +170,26 @@ const addNewToDo = () => {
   // add event listener to delete button
   trashcan.addEventListener("click", () => {
     // console.log("new todo trash");
-    trashcan.parentElement.style.display = "none";
+    trashcan.parentElement.remove();
   });
 
   // ADD COMPLETE/INCOMPLETE TO NEW TODO
+  // create checkBox before div
+  let controlCB = document.createElement("input");
+  controlCB.type = "checkbox";
+  controlCB.classList.add("reallyChecked");
+
   // create element
   let checkbox = document.createElement("div");
   checkbox.classList.add("checkToDo");
   // prepend complete/incomplete button to element
   element.prepend(checkbox);
+  element.prepend(controlCB);
   // add event listener to complete/incomplete button
-  checkbox.addEventListener("click", (todo) => {
+  controlCB.addEventListener("click", (todo) => {
     // toggle class
     checkbox.parentElement.classList.toggle("markComplete");
-    checkbox.classList.toggle("markCompleteCheckBox");
+    // checkbox.classList.toggle("markCompleteCheckBox");
     // console.log('toggles complete')
   });
 
@@ -170,4 +210,57 @@ const clearInput = () => {
   // console.log("clear input");
   // SET INPUT TO EMPTY STRING
   document.getElementById("newToDo").value = "";
+};
+
+// COMPLETE ALL
+const completeAll = (event) => {
+  console.log("complete");
+  // CHECKED OR NOT CHECKED?
+  console.log(event.target.checked);
+
+  // let completeAllButton = document.getElementById("completeAllButton");
+
+  let allStrikeThrough = document.querySelectorAll("li");
+  allStrikeThrough.forEach((singleRC) => {
+    if (!singleRC.classList.contains("markComplete")) {
+      singleRC.classList.add("markComplete");
+    } else if (!event.target.checked) {
+      singleRC.classList.remove("markComplete");
+      // singleRC.checked = false
+    }
+  });
+  // console.log(allStrikeThrough);
+
+  // TARGET .REALLYCHECKED AND ALLOW CSS TO UPDATE STYLES
+
+  let allReallyChecked = document.querySelectorAll(".reallyChecked");
+  // allReallyChecked.forEach(singleRC => singleRC.classList.toggle('markCompleteCheckBox'))
+  allReallyChecked.forEach((singleRC) => {
+    console.log(singleRC.checked);
+    if (!singleRC.checked) {
+      singleRC.checked = true;
+    } else if (!event.target.checked) {
+      singleRC.checked = false;
+    }
+  });
+
+  // console.log(allReallyChecked);
+};
+
+// DELETE ALL
+const deleteAll = () => {
+  // let deleteAllButton = document.getElementById("deleteAllButton");
+  let allTodos = document.getElementsByTagName("li");
+  // console.log('how many left: ', allTodos.length);
+  // for (let i = 0; i < allTodos.length; i++) {
+  //   allTodos[i].remove()
+  //   console.log(i)
+  //   // debugger
+  // }
+  let i = allTodos.length;
+
+  while (i--) {
+    allTodos[i].remove();
+  }
+  console.log('how many left: ', allTodos.length)
 };
