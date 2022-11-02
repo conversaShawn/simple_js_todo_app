@@ -2,6 +2,7 @@
 
 import { addNewToDo } from './js/add.js';
 import {addTrashCan} from './js/delete.js'
+import {deleteAll} from './js/deleteAll.js'
 
 
 // GENERATE STATIC TODO LIST
@@ -25,6 +26,23 @@ let toDoList = document.getElementById('toDoList')
 todos.forEach(todo => {
 toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
 })
+
+// let trashcans = document.getElementsByTagName("li");
+
+// for (let i = 0; i < trashcans.length; i++) {
+//   // trashcans.appendChild(trashcan)
+//   let trashcan = document.createElement("div");
+//   trashcan.classList.add("deleteToDo");
+//   trashcans[i].appendChild(trashcan)
+//     trashcans[i].addEventListener("click", () => {
+//       console.log("delete!");
+//     //   const elem = trashcans[i];
+//     //   elem.parentNode.remove()
+//     //   console.log(elem);
+
+    
+//     });
+// }
 
 // PUSH NEW TODO INTO todos OBJECT
 
@@ -274,3 +292,4 @@ addNewToDo()
 //   }
 //   console.log('how many left: ', allTodos.length)
 // };
+deleteAll()

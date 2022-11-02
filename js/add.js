@@ -1,3 +1,5 @@
+import { addTrashCan } from "./delete.js";
+
 // ADD NEW TODO
 const addNewToDo = () => {
   // console.log("add todo on click");
@@ -18,6 +20,9 @@ const addNewToDo = () => {
     let toDoList = document.getElementById('toDoList')
     toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', newToDoText)
 
+
+    addTrashCan()
+    
     // // CREATE NEW TODO DIV
     // // store input text as variable
     // // create parent element
