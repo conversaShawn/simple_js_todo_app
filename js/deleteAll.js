@@ -1,5 +1,5 @@
 // DELETE ALL
-const deleteAll = () => {
+const deleteAllToDos = () => {
   let deleteAllButton = document.getElementById("deleteAllButton");
 
   deleteAllButton.addEventListener("click", () => {
@@ -13,4 +13,4 @@ const deleteAll = () => {
   });
 };
 
-export { deleteAll };
+export { deleteAllToDos };

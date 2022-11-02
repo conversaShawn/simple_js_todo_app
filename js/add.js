@@ -1,30 +1,27 @@
-import { addTrashCan } from "./delete.js";
+import { deleteToDo } from "./delete.js";
 
 // ADD NEW TODO
 const addNewToDo = () => {
-  // console.log("add todo on click");
   let addNewToDoButton = document.getElementById("addToDoButton");
 
   addNewToDoButton.addEventListener("click", () => {
     let newToDoText = document.getElementById("newToDo").value;
     console.log("value: ", newToDoText);
 
-    let newToDo = [
-      {
-        text: newToDoText,
-        isComplete: false,
-      },
-    ];
+    let itemTemplate = document.getElementById("toDoItem");
+    let toDoList = document.getElementById("toDoList");
 
-    let itemTemplate = document.getElementById('toDoItem')
-    let toDoList = document.getElementById('toDoList')
-    toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', newToDoText)
+    newToDoText === ""
+      ? alert("YOU MUST ENTER NEW TODO")
+      : (toDoList.innerHTML += itemTemplate.innerHTML.replace(
+          "ITEM_TEXT",
+          newToDoText
+        ));
 
-    addTrashCan()
-    
+    deleteToDo();
+
     clearInput();
   });
-
 };
 
 // RESET INPUT

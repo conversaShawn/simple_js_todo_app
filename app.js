@@ -1,9 +1,8 @@
 // console.log("js file works");
 
-import { addNewToDo } from './js/add.js';
-import {addTrashCan} from './js/delete.js'
-import {deleteAll} from './js/deleteAll.js'
-
+import { addNewToDo } from "./js/add.js";
+import { deleteToDo } from "./js/delete.js";
+import { deleteAllToDos } from "./js/deleteAll.js";
 
 // GENERATE STATIC TODO LIST
 let todos = [
@@ -21,11 +20,11 @@ let todos = [
   },
 ];
 
-let itemTemplate = document.getElementById('toDoItem')
-let toDoList = document.getElementById('toDoList')
-todos.forEach(todo => {
-toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
-})
+let itemTemplate = document.getElementById("toDoItem");
+let toDoList = document.getElementById("toDoList");
+todos.forEach((todo) => {
+  toDoList.innerHTML += itemTemplate.innerHTML.replace("ITEM_TEXT", todo.text);
+});
 
 // PUSH NEW TODO INTO todos OBJECT
 
@@ -65,7 +64,7 @@ toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
 // };
 // addPencil();
 
-addTrashCan();
+deleteToDo();
 
 // ADD COMPLETE/INCOMPLETE BUTTON;
 // const addCheckBox = () => {
@@ -194,7 +193,7 @@ addTrashCan();
 
 //   clearInput();
 // };
-addNewToDo()
+addNewToDo();
 
 // RESET INPUT
 // const clearInput = () => {
@@ -238,4 +237,4 @@ addNewToDo()
 //   // console.log(allReallyChecked);
 // };
 
-deleteAll()
+deleteAllToDos();

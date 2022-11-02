@@ -50,20 +50,17 @@
           ></div>
         </div>
       </div>
-      <template id="toDoItem">
-        <li class="individualToDo">
-          <!-- <input type="checkbox" class="reallyChecked" /> -->
-          <!-- <div class="checkToDo"></div> -->
-          <div class="testing">ITEM_TEXT</div>
-          <!-- <div class="editToDo"></div> -->
-          <!-- <div class="saveToDo" style="display: none"></div> -->
-          <div class="deleteToDo"></div>
-        </li>
-      </template>
       <ul id="toDoList">
-        <!-- <li class="individualToDo"></li>
-        <li class="individualToDo"></li>
-        <li class="individualToDo"></li> -->
+        <template id="toDoItem">
+          <li id="toDoContainer" class="individualToDo">
+            <!-- <input type="checkbox" class="reallyChecked" /> -->
+            <!-- <div class="checkToDo"></div> -->
+            <div class="testing">ITEM_TEXT</div>
+            <!-- <div class="editToDo"></div> -->
+            <!-- <div class="saveToDo" style="display: none"></div> -->
+            <div class="deleteToDo"></div>
+          </li>
+        </template>
       </ul>
       <script type="module" src="./app.js"></script>
     </div>
