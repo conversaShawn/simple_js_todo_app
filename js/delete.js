@@ -15,8 +15,9 @@ const addTrashCan = () => {
   for (let i = 0; i < trashcans.length; i++) {
     trashcans[i].addEventListener("click", () => {
       console.log("delete!");
-      trashcans[i].parentNode.remove()
-      console.log(trashcans);
+      const elem = trashcans[i];
+      elem.parentNode.remove()
+      console.log(elem);
 
       
     });
