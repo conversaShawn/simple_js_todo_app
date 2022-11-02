@@ -27,23 +27,6 @@ todos.forEach(todo => {
 toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
 })
 
-// let trashcans = document.getElementsByTagName("li");
-
-// for (let i = 0; i < trashcans.length; i++) {
-//   // trashcans.appendChild(trashcan)
-//   let trashcan = document.createElement("div");
-//   trashcan.classList.add("deleteToDo");
-//   trashcans[i].appendChild(trashcan)
-//     trashcans[i].addEventListener("click", () => {
-//       console.log("delete!");
-//     //   const elem = trashcans[i];
-//     //   elem.parentNode.remove()
-//     //   console.log(elem);
-
-    
-//     });
-// }
-
 // PUSH NEW TODO INTO todos OBJECT
 
 // ADD EDIT BUTTON
@@ -82,26 +65,6 @@ toDoList.innerHTML += itemTemplate.innerHTML.replace('ITEM_TEXT', todo.text)
 // };
 // addPencil();
 
-// ADD DELETE BUTTON;
-// const addTrashCan = () => {
-//   // console.log("it deletes");
-
-//   // get parent node
-//   let addTrashCanIcon = document.querySelectorAll("li");
-
-//   // DELETE
-//   addTrashCanIcon.forEach((singleTrashCan) => {
-//     let trashcan = document.createElement("div");
-//     trashcan.classList.add("deleteToDo");
-//     singleTrashCan.appendChild(trashcan);
-//     trashcan.addEventListener("click", () => {
-//       // trashcan.parentElement.style.display = "none";
-//       trashcan.parentElement.remove();
-//       // trashcan.parentNode.remove()
-//       console.log('how many left: ', addTrashCanIcon)
-//     });
-//   });
-// };
 addTrashCan();
 
 // ADD COMPLETE/INCOMPLETE BUTTON;
@@ -275,21 +238,4 @@ addNewToDo()
 //   // console.log(allReallyChecked);
 // };
 
-// DELETE ALL
-// const deleteAll = () => {
-//   // let deleteAllButton = document.getElementById("deleteAllButton");
-//   let allTodos = document.getElementsByTagName("li");
-//   // console.log('how many left: ', allTodos.length);
-//   // for (let i = 0; i < allTodos.length; i++) {
-//   //   allTodos[i].remove()
-//   //   console.log(i)
-//   //   // debugger
-//   // }
-//   let i = allTodos.length;
-
-//   while (i--) {
-//     allTodos[i].remove();
-//   }
-//   console.log('how many left: ', allTodos.length)
-// };
 deleteAll()
