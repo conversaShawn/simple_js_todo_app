@@ -8,13 +8,13 @@ const saveToDo = () => {
     saveDisk[i].addEventListener("click", () => {
       //   console.log('saves edits')
       let saveNodes = saveDisk[i].parentNode.childNodes;
-      //   console.log(saveNodes);
+      // console.log(saveNodes);
 
-    //   let saveText = saveNodes[i].nextElementSibling;
-        // console.log(saveText.innerHTML);
+      let saveText = saveNodes[5];
+      console.log(saveText.innerHTML);
 
       let editNodes = saveDisk[i].previousElementSibling;
-    //   console.log(editNodes);
+      //   console.log(editNodes);
 
       editNodes.contentEditable = false;
       saveDisk[i].style.display = "none";

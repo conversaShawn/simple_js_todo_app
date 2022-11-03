@@ -9,8 +9,8 @@ const editToDo = () => {
       let editNodes = editPencil[i].parentNode.childNodes;
       // console.log(editNodes);
 
-      let editText = editNodes[i].nextElementSibling;
-      // console.log(editText.innerHTML);
+      let editText = editNodes[5];
+      // console.log(editText);
 
       let saveNodes = editPencil[i].nextElementSibling;
       // console.log(saveNodes);
