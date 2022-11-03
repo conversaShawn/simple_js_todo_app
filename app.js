@@ -3,6 +3,8 @@
 import { addNewToDo } from "./js/add.js";
 import { deleteToDo } from "./js/delete.js";
 import { deleteAllToDos } from "./js/deleteAll.js";
+import {editToDo} from './js/edit.js'
+import {saveToDo} from './js/save.js'
 
 // GENERATE STATIC TODO LIST
 let todos = [
@@ -29,7 +31,7 @@ todos.forEach((todo) => {
 // PUSH NEW TODO INTO todos OBJECT
 
 // ADD EDIT BUTTON
-// const addPencil = () => {
+// const editToDo  = () => {
 //   // console.log('content editable')
 
 //   let addEditIcons = document.querySelectorAll("li");
@@ -62,7 +64,8 @@ todos.forEach((todo) => {
 //     });
 //   });
 // };
-// addPencil();
+editToDo();
+saveToDo()
 
 deleteToDo();
 

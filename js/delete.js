@@ -2,7 +2,6 @@
 const deleteToDo = () => {
   let trashcans = document.getElementsByClassName("deleteToDo");
   
-
   for (let i = 0; i < trashcans.length; i++) {
     trashcans[i].addEventListener("click", (event) => {
       if (trashcans.length) {

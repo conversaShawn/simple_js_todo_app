@@ -1,4 +1,6 @@
 import { deleteToDo } from "./delete.js";
+import { editToDo } from "./edit.js";
+import { saveToDo } from "./save.js";
 
 // ADD NEW TODO
 const addNewToDo = () => {
@@ -19,6 +21,8 @@ const addNewToDo = () => {
         ));
 
     deleteToDo();
+    editToDo()
+    saveToDo()
 
     clearInput();
   });
