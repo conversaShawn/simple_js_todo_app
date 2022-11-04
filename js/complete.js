@@ -13,14 +13,24 @@ const completeToDo = () => {
         //   event.target.parentNode.remove();
         //   console.log("how many left: ", trashcans.length);
         // } 
-        if (!event.target.classList.contains("markComplete")) {
-          event.target.classList.add("markComplete");
-        } else if (!event.target.checked) {
-          event.target.classList.remove("markComplete");
-          // singleRC.checked = false
-        }
+        let eventParent = addCheckBoxIcon[i].parentNode.childNodes
+        // if (event.target.checked) {
+
+          // event.target.classList.add("markComplete");
+          // addCheckBoxIcon[i].checked //= !addCheckBoxIcon[i].checked;
+          // event.target.checked = true //classList.add("markComplete");
+          console.log(addCheckBoxIcon[i].checked) //classList.add("markComplete");
+          eventParent[5].classList.toggle('markComplete')
+        // } else if (!event.target.checked) {
+        //   // event.target.classList.remove("markComplete");
+        //   event.target.checked = false //classList.remove("markComplete");
+        //   eventParent[5].classList.remove('markComplete')
+        //   // singleRC.checked = false
+        // }
       });
     }
+
+
 
     // TOGGLE COMPLETE/INCOMPLETE
     // addCheckBoxIcon.forEach((singleCheckBox) => {
