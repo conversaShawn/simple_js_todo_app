@@ -8,7 +8,7 @@ const completeAllToDos = () => {
 
     // let completeAllButton = document.getElementById("completeAllButton");
 
-    let allStrikeThrough = document.querySelectorAll("li");
+    // let allStrikeThrough = document.querySelectorAll("li");
     // allStrikeThrough.forEach((singleRC) => {
     //   if (!singleRC.classList.contains("markComplete")) {
     //     singleRC.classList.add("markComplete");
@@ -44,7 +44,7 @@ const completeAllToDos = () => {
         //   console.log("how many left: ", trashcans.length);
         // } 
         
-
+// SET VAR FOR CURRENT STATE => 2 FUNCS
         
         let eventParent = addCheckBoxIcon[i].parentNode.childNodes
         // if (event.target.checked) {
