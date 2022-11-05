@@ -23,20 +23,13 @@
           maxlength="60"
           placeholder="Add an item"
         />
-        <button
-          id="addToDoButton"
-          placeholder="Add New ToDo"
-          onclick="addNewToDo()"
-        >
-          Add Item
-        </button>
+        <button id="addToDoButton" placeholder="Add New ToDo">Add Item</button>
       </div>
       <div class="allContainer">
         <div class="completeAllContainer">
           <h3>COMPLETE ALL</h3>
           <input
             id="completeAllButton"
-            onclick="completeAll(event)"
             class="reallyCompleted ac"
             type="checkbox"
           />
@@ -44,26 +37,22 @@
         </div>
         <div class="deleteAllContainer">
           <h3>DELETE ALL</h3>
-          <div
-            id="deleteAllButton"
-            onclick="deleteAll(event)"
-            class="deleteAllToDos"
-          ></div>
+          <div id="deleteAllButton" class="deleteAllToDos"></div>
         </div>
       </div>
-      <!-- <template id="toDoItem">
-        <li class="individualToDo">
-          <div class="testing">
-            ITEM_TEXT
-          </div>  
-        </li> -->
-      </template>
       <ul id="toDoList">
-        <li class="individualToDo"></li>
-        <li class="individualToDo"></li>
-        <li class="individualToDo"></li>
+        <template id="toDoItem">
+          <li id="toDoContainer" class="individualToDo">
+            <input type="checkbox" class="reallyChecked" />
+            <div class="checkToDo"></div>
+            <div class="testing">ITEM_TEXT</div>
+            <div class="editToDo"></div>
+            <div class="saveToDo" style="display: none"></div>
+            <div class="deleteToDo"></div>
+          </li>
+        </template>
       </ul>
-      <script src="./app.js"></script>
+      <script type="module" src="./app.js"></script>
     </div>
   </body>
 </html>
