@@ -8,6 +8,7 @@ const completeToDo = () => {
       let eventParent = addCheckBoxIcon[i].parentNode.childNodes;
       // console.log(addCheckBoxIcon[i].checked)
       eventParent[5].classList.toggle("markComplete");
+      eventParent[3].classList.toggle("checkComplete");
     });
   }
 };
