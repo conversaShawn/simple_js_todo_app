@@ -13,7 +13,7 @@ const editToDo = () => {
       // console.log(editText);
 
       let saveNodes = editPencil[i].nextElementSibling;
-      // console.log(saveNodes);
+      console.log(saveNodes);
 
       editText.contentEditable = true;
       editText.focus();
