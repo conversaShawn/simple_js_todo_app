@@ -5,8 +5,8 @@ import { deleteToDo } from "./js/delete.js";
 import { deleteAllToDos } from "./js/deleteAll.js";
 import { editToDo } from "./js/edit.js";
 import { saveToDo } from "./js/save.js";
-import {completeToDo} from './js/complete.js'
-import {completeAllToDos} from './js/completeAll.js'
+import { completeToDo } from "./js/complete.js";
+import { completeAllToDos } from "./js/completeAll.js";
 
 // GENERATE STATIC TODO LIST
 let todos = [
@@ -36,9 +36,7 @@ editToDo();
 saveToDo();
 deleteToDo();
 deleteAllToDos();
-completeToDo()
-completeAllToDos()
-
-
+completeToDo();
+completeAllToDos();
 
 addNewToDo();

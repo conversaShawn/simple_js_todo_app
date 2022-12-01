@@ -14,11 +14,11 @@ const completeAllToDos = () => {
         addCheckBoxIcon[i].checked = true;
         // console.log(addCheckBoxIcon)
         eventParent[5].classList.add("markComplete");
-        eventParent[3].classList.add("checkComplete")
+        eventParent[3].classList.add("checkComplete");
       }
       if (!completeAllButton.checked) {
         // console.log(completeAllButton.checked)
-        addCheckBoxIcon[i].checked = false; //= !addCheckBoxIcon[i].checked;
+        addCheckBoxIcon[i].checked = false;
         // console.log(addCheckBoxIcon[i].checked)
         eventParent[5].classList.remove("markComplete");
         eventParent[3].classList.remove("checkComplete");
