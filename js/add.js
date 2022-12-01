@@ -6,8 +6,8 @@ import { completeToDo } from "./complete.js";
 // ADD NEW TODO
 const addNewToDo = () => {
   let addNewToDoButton = document.getElementById("addToDoButton");
-  const addWithClickOrEnter = () => {
 
+  const addWithClickOrEnter = () => {
     let newToDoText = document.getElementById("newToDo").value;
     console.log("value: ", newToDoText);
 
@@ -34,12 +34,15 @@ const addNewToDo = () => {
     clearInput();
   };
 
+  // ADD NEW TODO WITH CLICK
   addNewToDoButton.addEventListener("click", () => {
-    addWithClickOrEnter()
+    addWithClickOrEnter();
   });
+
+  // ADD NEW TODO WITH ENTER
   document.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
-      addWithClickOrEnter()
+      addWithClickOrEnter();
     }
   });
 };
