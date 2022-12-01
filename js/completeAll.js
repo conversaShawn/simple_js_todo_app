@@ -12,7 +12,7 @@ const completeAllToDos = () => {
       // console.log(eventParent);
       if (!addCheckBoxIcon[i].checked) {
         addCheckBoxIcon[i].checked = true;
-        // console.log(addCheckBoxIcon[i].checked)
+        // console.log(addCheckBoxIcon)
         eventParent[5].classList.add("markComplete");
         eventParent[3].classList.add("checkComplete")
       }
