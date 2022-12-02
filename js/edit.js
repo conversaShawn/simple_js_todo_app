@@ -1,7 +1,7 @@
 const editToDo = () => {
   // console.log('content editable')
 
-  let editPencil = document.querySelectorAll(".editToDo");
+  let editPencil = document.getElementsByClassName("editToDo");
 
   for (let i = 0; i < editPencil.length; i++) {
     editPencil[i].addEventListener("click", () => {

@@ -1,7 +1,7 @@
 const saveToDo = () => {
   // console.log('content saveable')
 
-  let saveDisk = document.querySelectorAll(".saveToDo");
+  let saveDisk = document.getElementsByClassName("saveToDo");
 
   for (let i = 0; i < saveDisk.length; i++) {
     saveDisk[i].addEventListener("click", () => {
