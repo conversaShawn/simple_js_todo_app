@@ -1,7 +1,7 @@
 const editToDo = () => {
   // console.log('content editable')
 
-  let editPencil = document.getElementsByClassName("editToDo");
+  let editPencil = document.querySelectorAll(".editToDo");
 
   for (let i = 0; i < editPencil.length; i++) {
     editPencil[i].addEventListener("click", () => {
@@ -12,7 +12,7 @@ const editToDo = () => {
       // console.log(editText);
 
       let saveNodes = editPencil[i].nextElementSibling;
-      console.log(saveNodes);
+      // console.log(saveNodes);
 
       editText.contentEditable = true;
       editText.focus();
