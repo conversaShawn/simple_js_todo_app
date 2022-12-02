@@ -41,7 +41,7 @@ const addNewToDo = () => {
 
   // ADD NEW TODO WITH ENTER
   document.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && document.getElementById("newToDo").value !== "") {
       addWithClickOrEnter();
     }
   });
