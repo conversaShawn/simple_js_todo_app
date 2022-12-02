@@ -1,7 +1,7 @@
 // ADD COMPLETE/INCOMPLETE BUTTON;
 const completeToDo = () => {
   // console.log("it toggles");
-  let addCheckBoxIcon = document.getElementsByClassName("reallyChecked");
+  let addCheckBoxIcon = document.querySelectorAll(".reallyChecked");
 
   for (let i = 0; i < addCheckBoxIcon.length; i++) {
     addCheckBoxIcon[i].addEventListener("click", () => {
