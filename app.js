@@ -12,22 +12,27 @@ import { completeAllToDos } from "./js/completeAll.js";
 let todos = [
   {
     text: "Learn js",
-    // isComplete: false,
+    isComplete: false,
   },
   {
     text: "Learn cypress",
-    // isComplete: true,
+    isComplete: true,
   },
   {
     text: "Learn more cool things",
-    // isComplete: false,
+    isComplete: false,
   },
 ];
 
 let itemTemplate = document.getElementById("toDoItem");
 let toDoList = document.getElementById("toDoList");
 todos.forEach((todo) => {
-  toDoList.innerHTML += itemTemplate.innerHTML.replace("ITEM_TEXT", todo.text);
+  toDoList.innerHTML += itemTemplate.innerHTML
+  .replace("ITEM_TEXT", todo.text)
+  .replace("INITIAL_CHECKED_VALUE", todo.isComplete)
+  .replace("INITIAL_CHECKED_IMG", todo.isComplete ? "checkComplete" : "")
+
+
 });
 
 // PUSH NEW TODO INTO todos OBJECT

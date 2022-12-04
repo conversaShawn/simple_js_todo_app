@@ -45,9 +45,10 @@
       <ul id="toDoList">
         <template id="toDoItem">
           <li id="toDoContainer" class="individualToDo">
-              <input type="checkbox" class="reallyChecked" />
-              <dl class="checkToDo"></dl>
+              <input type="checkbox" class="reallyChecked" checked="INITIAL_CHECKED_VALUE"/>
+              <dl class="checkToDo INITIAL_CHECKED_IMG" ></dl>
               <dl class="toDoText">ITEM_TEXT</dl>
+              <input class="savedToDoText" type="text" style="display: none">
               <dl class="editToDo"></dl>
               <dl class="saveToDo" style="display: none"></dl>
               <dl class="deleteToDo"></dl>
