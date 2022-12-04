@@ -12,15 +12,15 @@ import { completeAllToDos } from "./js/completeAll.js";
 let todos = [
   {
     text: "Learn js",
-    isComplete: false,
+    checked: false,
   },
   {
     text: "Learn cypress",
-    isComplete: true,
+    checked: true,
   },
   {
     text: "Learn more cool things",
-    isComplete: false,
+    checked: false,
   },
 ];
 
@@ -29,10 +29,9 @@ let toDoList = document.getElementById("toDoList");
 todos.forEach((todo) => {
   toDoList.innerHTML += itemTemplate.innerHTML
   .replace("ITEM_TEXT", todo.text)
-  .replace("INITIAL_CHECKED_VALUE", todo.isComplete)
-  .replace("INITIAL_CHECKED_IMG", todo.isComplete ? "checkComplete" : "")
-
-
+  .replace("INITIAL_CHECKED_VALUE", todo.checked)
+  .replace("INITIAL_CHECKED_IMG", todo.checked ? "checkComplete" : "")
+  .replace("INITIAL_CHECKED_STRIKEOUT", todo.checked ? "markComplete" : "")
 });
 
 // PUSH NEW TODO INTO todos OBJECT
