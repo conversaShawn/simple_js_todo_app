@@ -3,10 +3,10 @@ const deleteToDo = () => {
   let trashcans = document.getElementsByClassName("deleteToDo");
 
   for (let i = 0; i < trashcans.length; i++) {
-    let parent = trashcans[i].parentElement;
+    let parentLiNode = trashcans[i].closest('.individualToDo');
     trashcans[i].addEventListener("click", () => {
-      // console.log(parent)
-      parent.remove();
+      // console.log(parentLiNode)
+      parentLiNode.remove();
       console.log("how many left: ", trashcans.length);
     });
   }
