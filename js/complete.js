@@ -4,21 +4,25 @@ const completeToDo = () => {
   let addCheckBoxIcon = document.querySelectorAll(".reallyChecked");
 
   for (let i = 0; i < addCheckBoxIcon.length; i++) {
+    let eventParent = addCheckBoxIcon[i].parentNode;
+    // let reallyCheckedNode = eventParent.querySelector('.reallyChecked')
     addCheckBoxIcon[i].addEventListener("click", () => {
-      let eventParent = addCheckBoxIcon[i].parentNode.childNodes;
-      // console.log(addCheckBoxIcon[i].checked)
-      if (addCheckBoxIcon[i].checked) {
-        // addCheckBoxIcon[i].checked = true;
-        console.log(addCheckBoxIcon[i].checked);
-        console.log(eventParent[5]);
-        eventParent[5].classList.add("markComplete");
-        eventParent[3].classList.add("checkComplete");
+      if (eventParent.querySelector('.checkToDo').classList.contains("checkComplete")) {
+        // console.log(addCheckBoxIcon[i]);
+        // console.log(addCheckBoxIcon[i].checked);
+        // console.log(eventParent);
+        console.log(eventParent.querySelector('.reallyChecked').checked)
+        eventParent.querySelector('.checkToDo').classList.remove("checkComplete")
+        eventParent.querySelector('.toDoText').classList.remove("markComplete")
       } else {
-      //   // console.log(completeAllButton.checked)
-      //   addCheckBoxIcon[i].checked = false; //= !addCheckBoxIcon[i].checked;
-        console.log(addCheckBoxIcon[i].checked);
-        eventParent[5].classList.remove("markComplete");
-        eventParent[3].classList.remove("checkComplete");
+      // if (reallyCheckedNode.checked) {
+        // console.log(addCheckBoxIcon[i]);
+        // eventParent.querySelector('.reallyChecked').checked = false
+        // console.log(addCheckBoxIcon[i].checked);
+        // console.log(eventParent);
+        console.log(eventParent.querySelector('.reallyChecked').checked)
+        eventParent.querySelector('.checkToDo').classList.add("checkComplete")
+        eventParent.querySelector('.toDoText').classList.add("markComplete")
       }
     });
   }
