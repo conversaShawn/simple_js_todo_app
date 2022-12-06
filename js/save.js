@@ -12,6 +12,7 @@ const saveToDo = () => {
 
     let newToDoTextInput = parentLi.querySelector(".savedToDoInput");
 
+    // SAVE EDITED TODO
     const saveWithEnterOrClick = () => {
       updatedToDoText.innerHTML = newToDoTextInput.value;
       editPencil.style.display = "block";
@@ -20,10 +21,12 @@ const saveToDo = () => {
       saveDisk[i].style.display = "none";
     };
 
+    // SAVE EDITED TODO WITH CLICK
     saveDisk[i].addEventListener("click", () => {
       saveWithEnterOrClick();
     });
 
+    // SAVE EDITED TODO WITH ENTER
     newToDoTextInput.addEventListener("keypress", (event) => {
       if (
         event.key === "Enter" &&

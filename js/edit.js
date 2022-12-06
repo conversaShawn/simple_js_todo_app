@@ -13,6 +13,7 @@ const editToDo = () => {
 
       previousToDoText.style.display = "none";
       newToDoTextInput.style.display = "block";
+      // FOCUS FOR A11Y
       newToDoTextInput.focus();
       newToDoTextInput.value = previousToDoText.textContent;
       editPencil[i].style.display = "none";

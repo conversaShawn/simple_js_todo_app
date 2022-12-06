@@ -6,6 +6,7 @@ const completeAllToDos = () => {
 
     for (let i = 0; i < addCheckBoxIcon.length; i++) {
       let eventParent = addCheckBoxIcon[i].parentNode;
+      // IF !CHECKED => CHECKED
       if (
         eventParent
           .querySelector(".checkToDo")
@@ -20,6 +21,7 @@ const completeAllToDos = () => {
           .classList.remove("checkComplete");
         eventParent.querySelector(".toDoText").classList.remove("markComplete");
       }
+      // IF CHECKED => !CHECKED
       if (completeAllButton.checked) {
         eventParent.querySelector(".checkToDo").classList.add("checkComplete");
         eventParent.querySelector(".toDoText").classList.add("markComplete");
