@@ -9,7 +9,6 @@ const addNewToDo = () => {
   // ADD NEW TODO
   const addWithClickOrEnter = () => {
     let newToDoText = document.getElementById("newToDo").value;
-    // console.log("value: ", newToDoText);
 
     let toDoItemTemplate = document.getElementById("toDoItem");
     let toDoList = document.getElementById("toDoList");
@@ -41,7 +40,10 @@ const addNewToDo = () => {
 
   // ADD NEW TODO WITH ENTER
   document.addEventListener("keypress", (event) => {
-    if (event.key === "Enter" && document.getElementById("newToDo").value !== "") {
+    if (
+      event.key === "Enter" &&
+      document.getElementById("newToDo").value !== ""
+    ) {
       addWithClickOrEnter();
     }
   });
