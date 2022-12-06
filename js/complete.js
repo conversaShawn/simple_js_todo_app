@@ -5,7 +5,6 @@ const completeToDo = () => {
 
   for (let i = 0; i < addCheckBoxIcon.length; i++) {
     let eventParent = addCheckBoxIcon[i].parentNode;
-    // let reallyCheckedNode = eventParent.querySelector('.reallyChecked')
     addCheckBoxIcon[i].addEventListener("click", () => {
       if (eventParent.querySelector('.checkToDo').classList.contains("checkComplete")) {
         // console.log(addCheckBoxIcon[i]);

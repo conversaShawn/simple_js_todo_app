@@ -3,15 +3,15 @@ import { editToDo } from "./edit.js";
 import { saveToDo } from "./save.js";
 import { completeToDo } from "./complete.js";
 
-// ADD NEW TODO
 const addNewToDo = () => {
   let addNewToDoButton = document.getElementById("addToDoButton");
 
+  // ADD NEW TODO
   const addWithClickOrEnter = () => {
     let newToDoText = document.getElementById("newToDo").value;
-    console.log("value: ", newToDoText);
+    // console.log("value: ", newToDoText);
 
-    let itemTemplate = document.getElementById("toDoItem");
+    let toDoItemTemplate = document.getElementById("toDoItem");
     let toDoList = document.getElementById("toDoList");
 
     let addCheckBoxIcon = (document.getElementsByClassName(
@@ -21,7 +21,7 @@ const addNewToDo = () => {
 
     newToDoText === ""
       ? alert("YOU MUST ENTER NEW TODO")
-      : (toDoList.innerHTML += itemTemplate.innerHTML.replace(
+      : (toDoList.innerHTML += toDoItemTemplate.innerHTML.replace(
           "ITEM_TEXT",
           newToDoText
         ));
