@@ -9,7 +9,6 @@ const deleteAllToDos = () => {
     while (i--) {
       allTodos[i].remove();
     }
-    console.log("how many left: ", allTodos.length);
   });
 };
 

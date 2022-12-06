@@ -1,24 +1,23 @@
 const editToDo = () => {
-  // console.log('content editable')
-
-  let editPencil = document.getElementsByClassName("editToDo");
-  // let saveDisk = document.getElementsByClassName("saveToDo");
+  let editPencil = document.querySelectorAll(".editToDo");
 
   for (let i = 0; i < editPencil.length; i++) {
     editPencil[i].addEventListener("click", () => {
-      let editNodes = editPencil[i].parentNode.childNodes;
-      // console.log(editNodes);
+      let parentLi = editPencil[i].closest(".individualToDo");
 
-      let editText = editNodes[5];
-      // console.log(editText);
+      let previousToDoText = parentLi.querySelector(".toDoText");
 
-      let saveNodes = editPencil[i].nextElementSibling;
-      // console.log(saveNodes);
+      let savePencil = parentLi.querySelector(".saveToDo");
 
-      editText.contentEditable = true;
-      editText.focus();
+      let newToDoTextInput = parentLi.querySelector(".savedToDoInput");
+
+      previousToDoText.style.display = "none";
+      newToDoTextInput.style.display = "block";
+      // FOCUS FOR A11Y
+      newToDoTextInput.focus();
+      newToDoTextInput.value = previousToDoText.textContent;
       editPencil[i].style.display = "none";
-      saveNodes.style.display = "block";
+      savePencil.style.display = "block";
     });
   }
 };

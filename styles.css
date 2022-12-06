@@ -80,8 +80,6 @@ h3 {
   margin: 10px 37px;
 }
 
-
-
 /* ADD NEW TODO BUTTON */
 #addToDoButton {
   background-color: #00595d;
@@ -99,7 +97,6 @@ h3 {
   padding-left: 5px;
   width: 500px;
 }
-
 
 .addToDoContainer {
   display: flex;
@@ -123,6 +120,7 @@ li {
   display: flex;
   height: 40px;
   font-size: large;
+  font-family: "Times New Roman", sans-serif;
   align-items: center;
 }
 
@@ -161,13 +159,14 @@ li {
   background-image: url(/images/not_checked.png);
   background-size: 30px;
   margin-right: 10px;
-  pointer-events: none;
 }
 
-.reallyChecked:checked + .checkToDo {
+.checkComplete {
   background-image: url(/images/checked.png);
   height: 30px;
   width: 30px;
+  background-size: 30px;
+  margin-right: 10px;
 }
 
 .reallyChecked {
@@ -177,10 +176,20 @@ li {
   opacity: 0;
 }
 
-.testing:focus {
+.savedToDoInput:focus {
   width: 86%;
   height: 40px;
   display: flex;
   align-items: center;
+  font-family: "Times New Roman", sans-serif;
+  font-size: large;
 }
-
+.savedToDoInput {
+  width: 86%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: "Times New Roman", sans-serif;
+  font-size: large;
+  border: none;
+}

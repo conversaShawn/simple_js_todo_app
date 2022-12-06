@@ -2,24 +2,29 @@ const completeAllToDos = () => {
   let completeAllButton = document.getElementById("completeAllButton");
 
   completeAllButton.addEventListener("click", () => {
-    // console.log("complete");
-    // CHECKED OR NOT CHECKED?
-
-    let addCheckBoxIcon = document.getElementsByClassName("reallyChecked");
+    let addCheckBoxIcon = document.querySelectorAll(".reallyChecked");
 
     for (let i = 0; i < addCheckBoxIcon.length; i++) {
-      let eventParent = addCheckBoxIcon[i].parentNode.childNodes;
-      // console.log(eventParent);
-      if (!addCheckBoxIcon[i].checked) {
-        addCheckBoxIcon[i].checked = true;
-        // console.log(addCheckBoxIcon[i].checked)
-        eventParent[5].classList.add("markComplete");
+      let eventParent = addCheckBoxIcon[i].parentNode;
+      // IF !CHECKED => CHECKED
+      if (
+        eventParent
+          .querySelector(".checkToDo")
+          .classList.contains("checkComplete") &&
+        !completeAllButton.checked
+      ) {
+        console.log(
+          addCheckBoxIcon[i].parentNode.querySelector(".toDoText").innerHTML
+        );
+        eventParent
+          .querySelector(".checkToDo")
+          .classList.remove("checkComplete");
+        eventParent.querySelector(".toDoText").classList.remove("markComplete");
       }
-      if (!completeAllButton.checked) {
-        // console.log(completeAllButton.checked)
-        addCheckBoxIcon[i].checked = false; //= !addCheckBoxIcon[i].checked;
-        // console.log(addCheckBoxIcon[i].checked)
-        eventParent[5].classList.remove("markComplete");
+      // IF CHECKED => !CHECKED
+      if (completeAllButton.checked) {
+        eventParent.querySelector(".checkToDo").classList.add("checkComplete");
+        eventParent.querySelector(".toDoText").classList.add("markComplete");
       }
     }
   });
