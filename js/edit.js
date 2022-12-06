@@ -1,29 +1,22 @@
 const editToDo = () => {
-  // console.log('content editable')
-
   let editPencil = document.querySelectorAll(".editToDo");
 
   for (let i = 0; i < editPencil.length; i++) {
     editPencil[i].addEventListener("click", () => {
-      let editNodes = editPencil[i].parentNode.childNodes;
-      console.log(editNodes);
+      let parentLi = editPencil[i].closest(".individualToDo");
 
-      let editText = editNodes[5];
-      // console.log(editText);
+      let previousToDoText = parentLi.querySelector(".toDoText");
 
-      let saveNodes = editPencil[i].nextElementSibling;
-      // console.log(saveNodes);
+      let savePencil = parentLi.querySelector(".saveToDo");
 
-      let newToDoText = editNodes[7];
+      let newToDoTextInput = parentLi.querySelector(".savedToDoInput");
 
-      // editText.contentEditable = true;
-      editText.style.display = "none";
-      newToDoText.style.display = "block";
-      newToDoText.focus();
-      newToDoText.value = editText.textContent;
-      // editText.focus();
+      previousToDoText.style.display = "none";
+      newToDoTextInput.style.display = "block";
+      newToDoTextInput.focus();
+      newToDoTextInput.value = previousToDoText.textContent;
       editPencil[i].style.display = "none";
-      saveNodes.style.display = "block";
+      savePencil.style.display = "block";
     });
   }
 };
