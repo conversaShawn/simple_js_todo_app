@@ -24,7 +24,7 @@ let todos = [
   },
 ];
 
-let itemTemplate = document.getElementById("toDoItem");
+let itemTemplate = document.getElementById("toDoItemTemplate");
 let toDoList = document.getElementById("toDoList");
 todos.forEach((todo) => {
   toDoList.innerHTML += itemTemplate.innerHTML

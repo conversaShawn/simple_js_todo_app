@@ -1,13 +1,10 @@
-// ADD DELETE BUTTON;
 const deleteToDo = () => {
-  let trashcans = document.getElementsByClassName("deleteToDo");
+  let trashCan = document.getElementsByClassName("deleteToDo");
 
-  for (let i = 0; i < trashcans.length; i++) {
-    let parentLiNode = trashcans[i].closest('.individualToDo');
-    trashcans[i].addEventListener("click", () => {
-      // console.log(parentLiNode)
-      parentLiNode.remove();
-      console.log("how many left: ", trashcans.length);
+  for (let i = 0; i < trashCan.length; i++) {
+    let parentLi = trashCan[i].closest(".individualToDo");
+    trashCan[i].addEventListener("click", () => {
+      parentLi.remove();
     });
   }
 };
