@@ -14,30 +14,48 @@
     <title>cy.basicToDo</title>
   </head>
   <body>
-    <div class="appContainer">
-      <h1>To-Do App</h1>
-      <div class="addToDoContainer">
-        <input id="newToDo" type="text" maxlength="60" placeholder="Add an item" />
-        <button
-          id="addToDoButton"
-          placeholder="Add New ToDo"
-          onclick="addNewToDo()"
-        >
-          Add Item
-        </button>
-      </div>
+    <main class="appContainer">
+      <section>
+        <h1>To-Do App</h1>
+        <div class="addToDoContainer">
+          <input
+          id="newToDo"
+          type="text"
+          maxlength="60"
+          placeholder="Add an item"
+          />
+          <button id="addToDoButton" placeholder="Add New ToDo">Add Item</button>
+        </div>
+      </section>
+      <section class="allContainer">
+        <div class="completeAllContainer">
+          <h3>COMPLETE ALL</h3>
+          <input
+            id="completeAllButton"
+            class="reallyCompleted ac"
+            type="checkbox"
+          />
+          <div class="checkAllToDos ac"></div>
+        </div>
+        <div class="deleteAllContainer">
+          <h3>DELETE ALL</h3>
+          <div id="deleteAllButton" class="deleteAllToDos"></div>
+        </div>
+      </section>
       <ul id="toDoList">
-        <li class="individualToDo">
-          <!-- <div class="testing">Learn js</div> -->
-        </li>
-        <li class="individualToDo">
-          <!-- <div class="testing">Learn cypress</div> -->
-        </li>
-        <li class="individualToDo">
-          <!-- <div class="testing">Just keep learning</div> -->
-        </li>
+        <template id="toDoItemTemplate">
+          <li id="toDoItemContainer" class="individualToDo">
+              <input type="checkbox" class="reallyChecked"/>
+              <dl class="checkToDo INITIAL_CHECKED_IMG" checked="INITIAL_CHECKED_VALUE"></dl>
+              <dl class="toDoText INITIAL_CHECKED_STRIKEOUT">ITEM_TEXT</dl>
+              <input class="savedToDoInput" type="text" style="display: none">
+              <dl class="editToDo"></dl>
+              <dl class="saveToDo" style="display: none"></dl>
+              <dl class="deleteToDo"></dl>
+          </li>
+        </template>
       </ul>
-      <script src="./app.js"></script>
-    </div>
+      <script type="module" src="./app.js"></script>
+    </main>
   </body>
 </html>
