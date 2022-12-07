@@ -10,7 +10,7 @@ const addNewToDo = () => {
   const addWithClickOrEnter = () => {
     let newToDoText = document.getElementById("newToDo").value;
 
-    let toDoItemTemplate = document.getElementById("toDoItem");
+    let toDoItemTemplate = document.getElementById("toDoItemTemplate");
     let toDoList = document.getElementById("toDoList");
 
     let addCheckBoxIcon = (document.getElementsByClassName(
