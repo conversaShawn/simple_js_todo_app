@@ -13,11 +13,6 @@ const addNewToDo = () => {
     let toDoItemTemplate = document.getElementById("toDoItemTemplate");
     let toDoList = document.getElementById("toDoList");
 
-    let addCheckBoxIcon = (document.getElementsByClassName(
-      "reallyChecked"
-    ).checked = true);
-    console.log(addCheckBoxIcon);
-
     newToDoText === ""
       ? alert("YOU MUST ENTER NEW TODO")
       : (toDoList.innerHTML += toDoItemTemplate.innerHTML.replace(

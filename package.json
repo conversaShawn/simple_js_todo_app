@@ -1,0 +1,22 @@
+{
+  "name": "todo_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conversaShawn/simple_js_todo_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conversaShawn/simple_js_todo_app/issues"
+  },
+  "homepage": "https://github.com/conversaShawn/simple_js_todo_app#readme",
+  "dependencies": {
+    "cypress": "^12.0.1"
+  }
+}

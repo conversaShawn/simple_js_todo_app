@@ -1,10 +1,10 @@
-import { addNewToDo } from "./js/add.js";
-import { completeToDo } from "./js/complete.js";
-import { completeAllToDos } from "./js/completeAll.js";
-import { deleteToDo } from "./js/delete.js";
-import { deleteAllToDos } from "./js/deleteAll.js";
-import { editToDo } from "./js/edit.js";
-import { saveToDo } from "./js/save.js";
+import { addNewToDo } from "./add.js";
+import { completeToDo } from "./complete.js";
+import { completeAllToDos } from "./completeAll.js";
+import { deleteToDo } from "./delete.js";
+import { deleteAllToDos } from "./deleteAll.js";
+import { editToDo } from "./edit.js";
+import { saveToDo } from "./save.js";
 
 // GENERATE STATIC TODO LIST
 let todos = [
