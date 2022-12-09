@@ -1,6 +1,8 @@
 describe('add a new todo', () => {
-  it('adds with click', () => {
+  beforeEach('visit baseUrl', () => {
     // visit baseUrl
+  })
+  it('adds with click', () => {
     // verifies length of list (3)
     // get newToDo input 
     // type "Start learn.cypress.io"
@@ -8,11 +10,10 @@ describe('add a new todo', () => {
     // verify length of list(4)
   })
   it('submit with form', () => {
-    // visit baseUrl
-    // verify length of list (4)
+    // verify length of list (3)
     // get newToDo input
     // type "Live my best life"
     // press "Enter" to add new todo
-    // verify length of list (5)
+    // verify length of list (4)
   })
 })
