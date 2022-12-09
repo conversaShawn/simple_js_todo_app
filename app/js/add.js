@@ -9,7 +9,7 @@ const addNewToDo = () => {
   // ADD NEW TODO
   const addWithClickOrEnter = () => {
     let newToDoText = document.getElementById("newToDo").value;
-
+    // debugger
     let toDoItemTemplate = document.getElementById("toDoItemTemplate");
     let toDoList = document.getElementById("toDoList");
 
@@ -29,19 +29,26 @@ const addNewToDo = () => {
   };
 
   // ADD NEW TODO WITH CLICK
-  addNewToDoButton.addEventListener("click", () => {
-    addWithClickOrEnter();
-  });
-
-  // ADD NEW TODO WITH ENTER
-  document.addEventListener("keypress", (event) => {
-    if (
-      event.key === "Enter" &&
-      document.getElementById("newToDo").value !== ""
-    ) {
+  // addNewToDoButton.addEventListener("click", () => {
+  //   addWithClickOrEnter();
+  // });
+  
+  document
+    .getElementById("addToDoContainerForm")
+    .addEventListener("submit", (e) => {
+      e.preventDefault()
+      console.log('hello')
       addWithClickOrEnter();
-    }
-  });
+    });
+  // ADD NEW TODO WITH ENTER
+  // document.addEventListener("keypress", (event) => {
+  //   if (
+  //     event.key === "Enter" &&
+  //     document.getElementById("newToDo").value !== ""
+  //   ) {
+  //     addWithClickOrEnter();
+  //   }
+  // });
 };
 
 // RESET INPUT

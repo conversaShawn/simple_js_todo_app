@@ -7,7 +7,7 @@ describe('add a new todo', () => {
     // click addToDoButton button to add new todo
     // verify length of list(4)
   })
-  it('adds with enter', () => {
+  it('submit with form', () => {
     // visit baseUrl
     // verify length of list (4)
     // get newToDo input

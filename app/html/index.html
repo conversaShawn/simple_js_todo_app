@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/images/background.svg" />
+    <link rel="icon" type="image/x-icon" href="../images/background.svg" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
     <main class="appContainer">
       <section>
         <h1>To-Do App</h1>
-        <div class="addToDoContainer">
+        <form id="addToDoContainerForm" class="addToDoContainer">
           <input
           id="newToDo"
           type="text"
@@ -25,7 +25,7 @@
           placeholder="Add an item"
           />
           <button id="addToDoButton" placeholder="Add New ToDo">Add Item</button>
-        </div>
+        </form>
       </section>
       <section class="allContainer">
         <div class="completeAllContainer">
@@ -39,7 +39,7 @@
         </div>
         <div class="deleteAllContainer">
           <h3>DELETE ALL</h3>
-          <div id="deleteAllButton" class="deleteAllToDos"></div>
+          <button id="deleteAllButton" class="deleteAllToDos unbutton"></button>
         </div>
       </section>
       <ul id="toDoList">
@@ -47,11 +47,11 @@
           <li id="toDoItemContainer" class="individualToDo">
               <input type="checkbox" class="reallyChecked"/>
               <dl class="checkToDo INITIAL_CHECKED_IMG" checked="INITIAL_CHECKED_VALUE"></dl>
-              <dl class="toDoText INITIAL_CHECKED_STRIKEOUT">ITEM_TEXT</dl>
+              <span class="toDoText INITIAL_CHECKED_STRIKEOUT">ITEM_TEXT</span>
               <input class="savedToDoInput" type="text" style="display: none">
-              <dl class="editToDo"></dl>
-              <dl class="saveToDo" style="display: none"></dl>
-              <dl class="deleteToDo"></dl>
+              <button aria-label="Edit" class="editToDo unbutton"></button> 
+              <button aria-label="Save" class="saveToDo unbutton" style="display: none"></button>
+              <button aria-label="Delete" class="deleteToDo unbutton"></button>
           </li>
         </template>
       </ul>

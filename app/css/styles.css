@@ -65,6 +65,12 @@ h3 {
   margin-left: 10px 35px;
 }
 
+/* BUTTONS FOR ADA */
+.unbutton {
+border: none;
+background: transparent;
+}
+
 .reallyCompleted {
   height: 30px;
   width: 30px;
